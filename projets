@@ -1,1 +1,7 @@
+git clone https://github.com/Suazky/portfolio.git
+cd portfolio/projets
+# Copie tes images dans ce dossier
+git add .
+git commit -m "Add project images"
+git push origin main
 
