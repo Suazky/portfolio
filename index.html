@@ -159,7 +159,7 @@
       </div>
       <div class="about">
         <div>
-          <p>Je viens de la com, j'aime le concret et le travail d'équipe. J'apporte une organisation claire, des livrables propres, et un sens visuel net. Je conçois des identités, des kits, et des supports impactant.</p>
+          <p>Je viens de la com, j'aime le concret et j'avance vite. J'apporte une organisation claire, des livrables propres, et un sens visuel net. Je conçois des identités, des kits social, et des supports impactants.</p>
           <p class="small">Compétences clés :</p>
           <span class="pill">Branding</span>
           <span class="pill">Templates social</span>
@@ -181,3 +181,63 @@
       </div>
     </div>
   </section>
+
+  <section id="contact">
+    <div class="container">
+      <div class="section-head">
+        <h2>Contact</h2>
+        <p>Formulaire de contact</p>
+      </div>
+      <div class="contact">
+        <div class="panel">
+          <form action="https://formsubmit.co/youremail@example.com" method="POST">
+            <div class="field">
+              <label for="name">Nom</label>
+              <input id="name" name="name" required />
+            </div>
+            <div class="field">
+              <label for="email">Email</label>
+              <input id="email" type="email" name="email" required />
+            </div>
+            <div class="field">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" required></textarea>
+            </div>
+            <input type="hidden" name="_captcha" value="false">
+            <button class="btn primary" type="submit">Envoyer</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container row" style="justify-content: space-between;">
+      <div class="row"><div class="brand-logo">SB</div><span>© <span id="year"></span></span></div>
+      <div class="row">
+        <a class="small" href="#top">Haut de page</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const burger = document.getElementById('burger');
+    const nav = document.getElementById('navlinks');
+    burger?.addEventListener('click', () => nav.classList.toggle('open'));
+
+    const links = [...document.querySelectorAll('.navlinks a')].filter(a=>a.getAttribute('href')?.startsWith('#'));
+    const sections = links.map(a => document.querySelector(a.getAttribute('href'))).filter(Boolean);
+    const onScroll = () => {
+      const pos = window.scrollY + 120;
+      sections.forEach((sec, i) => {
+        const top = sec.offsetTop; const bottom = top + sec.offsetHeight;
+        const link = links[i];
+        if (pos >= top && pos < bottom) link.classList.add('active'); else link.classList.remove('active');
+      });
+    };
+    document.addEventListener('scroll', onScroll); onScroll();
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
