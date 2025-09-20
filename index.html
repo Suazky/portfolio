@@ -8,7 +8,7 @@
   <meta property="og:title" content="Portfolio" />
   <meta property="og:description" content="Communication, design, projets créatifs." />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="/assets/cover.jpg" />
+  <meta property="og:image\" content=\"assets/cover.jpg\" />
   <meta name="theme-color" content="#0f0f10" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -102,7 +102,7 @@
         <a href="#projets">Projets</a>
         <a href="#a-propos">À propos</a>
         <a href="#contact">Contact</a>
-        <a class="cta" href="/assets/CV_Sacha.pdf" target="_blank" rel="noopener">CV</a>
+        <a class="cta" href="assets/CV_Sacha.pdf" target="_blank" rel="noopener">CV</a>
       </nav>
       <button class="burger" id="burger" aria-label="Ouvrir le menu">
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
@@ -126,7 +126,7 @@
         </div>
       </div>
       <div class="hero-card">
-        <img src="/assets/preview.jpg" alt="aperçu d’un projet" style="width:100%; border-radius:12px; aspect-ratio: 4/3; object-fit: cover; border:1px solid var(--line);"/>
+        <img src="assets/preview.jpg" alt="aperçu d’un projet" style="width:100%; border-radius:12px; aspect-ratio: 4/3; object-fit: cover; border:1px solid var(--line);"/>
         <div class="row" style="margin-top:12px; justify-content: space-between;">
           <div class="row" style="gap:8px;">
             <span class="tag">Figma</span>
@@ -159,7 +159,7 @@
       </div>
       <div class="about">
         <div>
-          <p>Je viens de la com, j'aime le concret et j'avance vite. J'apporte une organisation claire, des livrables propres, et un sens visuel net. Je conçois des identités, des kits social, et des supports impactants.</p>
+          <p>Je viens de la com, j'aime le concret et le travail d'équipe. J'apporte une organisation claire, des livrables propres, et un sens visuel net. Je conçois des identités, des kits, et des supports impactant.</p>
           <p class="small">Compétences clés :</p>
           <span class="pill">Branding</span>
           <span class="pill">Templates social</span>
@@ -181,63 +181,3 @@
       </div>
     </div>
   </section>
-
-  <section id="contact">
-    <div class="container">
-      <div class="section-head">
-        <h2>Contact</h2>
-        <p>Formulaire de contact</p>
-      </div>
-      <div class="contact">
-        <div class="panel">
-          <form action="https://formsubmit.co/youremail@example.com" method="POST">
-            <div class="field">
-              <label for="name">Nom</label>
-              <input id="name" name="name" required />
-            </div>
-            <div class="field">
-              <label for="email">Email</label>
-              <input id="email" type="email" name="email" required />
-            </div>
-            <div class="field">
-              <label for="message">Message</label>
-              <textarea id="message" name="message" required></textarea>
-            </div>
-            <input type="hidden" name="_captcha" value="false">
-            <button class="btn primary" type="submit">Envoyer</button>
-          </form>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <footer>
-    <div class="container row" style="justify-content: space-between;">
-      <div class="row"><div class="brand-logo">SB</div><span>© <span id="year"></span></span></div>
-      <div class="row">
-        <a class="small" href="#top">Haut de page</a>
-      </div>
-    </div>
-  </footer>
-
-  <script>
-    const burger = document.getElementById('burger');
-    const nav = document.getElementById('navlinks');
-    burger?.addEventListener('click', () => nav.classList.toggle('open'));
-
-    const links = [...document.querySelectorAll('.navlinks a')].filter(a=>a.getAttribute('href')?.startsWith('#'));
-    const sections = links.map(a => document.querySelector(a.getAttribute('href'))).filter(Boolean);
-    const onScroll = () => {
-      const pos = window.scrollY + 120;
-      sections.forEach((sec, i) => {
-        const top = sec.offsetTop; const bottom = top + sec.offsetHeight;
-        const link = links[i];
-        if (pos >= top && pos < bottom) link.classList.add('active'); else link.classList.remove('active');
-      });
-    };
-    document.addEventListener('scroll', onScroll); onScroll();
-
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
-</body>
-</html>
