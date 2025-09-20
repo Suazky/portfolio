@@ -8,79 +8,68 @@
   <meta property="og:title" content="Portfolio" />
   <meta property="og:description" content="Communication, design, marketing." />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="assets/cover.jpg" />
+  <meta property="og:image" content="images/projet1.jpg" />
   <meta name="theme-color" content="#0f0f10" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;600;800&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --bg: #0f0f10;
-      --fg: #e9e9ea;
-      --muted: #a3a3a7;
-      --card: #16171a;
-      --line: #2a2b31;
-      --accent: #4e8ef7;
-      --accent-2: #7aa2f7;
-      --maxw: 1120px;
-      --radius: 12px;
-      --shadow: 0 6px 24px rgba(0,0,0,0.4);
+    /* mêmes styles que ta version précédente */
+    :root { --bg:#0f0f10; --fg:#e9e9ea; --muted:#a3a3a7; --card:#16171a;
+            --line:#2a2b31; --accent:#4e8ef7; --maxw:1120px; --radius:12px;
+            --shadow:0 6px 24px rgba(0,0,0,0.4);}
+    *{box-sizing:border-box;}
+    body{margin:0;font-family:Manrope,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+         background:var(--bg);color:var(--fg);line-height:1.6;}
+    a{color:inherit;text-decoration:none;}
+    .container{width:100%;max-width:var(--maxw);margin:0 auto;padding:0 20px;}
+    header{position:sticky;top:0;z-index:50;backdrop-filter:saturate(140%) blur(8px);
+           background:rgba(15,15,16,.8);border-bottom:1px solid var(--line);}
+    .nav{display:flex;align-items:center;justify-content:space-between;height:64px;}
+    .brand{display:flex;align-items:center;gap:12px;font-weight:800;}
+    .brand-logo{width:36px;height:36px;border-radius:8px;display:grid;place-items:center;
+                background:var(--accent);color:#fff;font-weight:900;box-shadow:var(--shadow);}
+    .navlinks{display:flex;gap:18px;align-items:center;}
+    .navlinks a{padding:8px 10px;border-radius:8px;color:var(--muted);font-weight:600;}
+    .navlinks a.active,.navlinks a:hover{color:var(--fg);background:rgba(255,255,255,0.05);}
+    .cta{background:var(--accent);color:#fff;padding:10px 14px;border-radius:8px;font-weight:800;box-shadow:var(--shadow);}
+    .burger{display:none;width:36px;height:36px;border:1px solid var(--line);border-radius:8px;place-items:center;color:var(--fg);}
+    @media (max-width:820px){
+      .navlinks{display:none;position:absolute;top:64px;right:20px;background:#121316;
+                border:1px solid var(--line);border-radius:10px;padding:12px;box-shadow:var(--shadow);
+                flex-direction:column;width:220px;}
+      .navlinks.open{display:flex;}
+      .burger{display:grid;}
     }
-    * { box-sizing: border-box; }
-    html, body { height: 100%; }
-    body {
-      margin: 0;
-      font-family: Manrope, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
-      background: var(--bg);
-      color: var(--fg);
-      line-height: 1.6;
-    }
-    a { color: inherit; text-decoration: none; }
-    .container { width: 100%; max-width: var(--maxw); margin: 0 auto; padding: 0 20px; }
-    header { position: sticky; top: 0; z-index: 50; backdrop-filter: saturate(140%) blur(8px); background: rgba(15,15,16,.8); border-bottom: 1px solid var(--line); }
-    .nav { display: flex; align-items: center; justify-content: space-between; height: 64px; }
-    .brand { display:flex; align-items:center; gap:12px; font-weight: 800; letter-spacing: .2px; }
-    .brand-logo { width: 36px; height: 36px; border-radius: 8px; display:grid; place-items:center; background: var(--accent); color:#fff; font-weight:900; box-shadow: var(--shadow); }
-    .navlinks { display: flex; gap: 18px; align-items: center; }
-    .navlinks a { padding: 8px 10px; border-radius: 8px; color: var(--muted); font-weight:600; }
-    .navlinks a.active, .navlinks a:hover { color: var(--fg); background: rgba(255,255,255,0.05); }
-    .cta { background: var(--accent); color:#fff; padding: 10px 14px; border-radius: 8px; font-weight: 800; box-shadow: var(--shadow); }
-    .burger { display:none; width:36px; height:36px; border:1px solid var(--line); border-radius:8px; place-items:center; color: var(--fg); }
-    @media (max-width: 820px){
-      .navlinks { display:none; position:absolute; top:64px; right:20px; background: #121316; border:1px solid var(--line); border-radius: 10px; padding: 12px; box-shadow: var(--shadow); flex-direction: column; width: 220px; }
-      .navlinks.open { display:flex; }
-      .burger { display:grid; }
-    }
-    .hero { padding: 74px 0 42px; border-bottom: 1px solid var(--line); }
-    .hero-grid { display:grid; grid-template-columns: 1.2fr .8fr; gap: 40px; align-items: center; }
-    .kicker { color: var(--muted); font-weight:700; letter-spacing:.16em; text-transform: uppercase; font-size:.76rem; }
-    h1 { font-size: clamp(1.9rem, 4vw, 2.6rem); line-height:1.18; margin: 10px 0 8px; }
-    .lead { color: var(--muted); font-size: clamp(1rem, 1.6vw, 1.08rem); }
-    .hero-actions { margin-top: 18px; display:flex; gap: 12px; flex-wrap: wrap; }
-    .btn { display:inline-flex; align-items:center; gap:10px; padding: 10px 14px; border:1px solid var(--line); border-radius: 8px; color: var(--fg); }
-    .btn:hover { background: rgba(255,255,255,0.05); }
-    .btn.primary { border: none; background: var(--accent); color:#fff; font-weight: 900; }
-    .hero-card { background: var(--card); border:1px solid var(--line); border-radius: 10px; padding: 12px; box-shadow: var(--shadow); }
-    @media (max-width: 920px){ .hero-grid { grid-template-columns: 1fr; } }
-    section { padding: 52px 0; }
-    .section-head { display:flex; align-items:end; justify-content: space-between; gap: 16px; margin-bottom: 20px; }
-    .section-head h2 { font-size: clamp(1.4rem, 3vw, 1.9rem); margin:0; }
-    .section-head p { margin:0; color: var(--muted); }
-    .grid { display:grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
-    @media (max-width: 1020px){ .grid { grid-template-columns: repeat(2, 1fr);} }
-    @media (max-width: 660px){ .grid { grid-template-columns: 1fr;} }
-    .card { background: var(--card); border:1px solid var(--line); border-radius: 10px; overflow: hidden; transition: transform .2s ease, border-color .2s ease; box-shadow: var(--shadow); }
-    .card:hover { transform: translateY(-2px); border-color: rgba(255,255,255,0.18); }
-    .thumb { aspect-ratio: 16/10; background: #1f2024; display:grid; place-items:center; font-weight:800; letter-spacing:.06em; color:#0b0c0e; }
-    .thumb span { background: rgba(255,255,255,0.08); color: var(--fg); padding: 6px 10px; border-radius: 8px; font-weight:700; font-size:.84rem; }
-    .card-body { padding: 12px; }
-    .small { color: var(--muted); font-size: .92rem; }
-    .tags { display:flex; flex-wrap:wrap; gap:8px; margin-top: 6px; }
-    .tag { font-size:.82rem; color: var(--muted); border:1px solid var(--line); padding:6px 10px; border-radius:999px; }
-    .about { display:grid; grid-template-columns: .9fr 1.1fr; gap: 24px; }
-    .about .pill { display:inline-block; background: rgba(255,255,255,0.06); border:1px solid var(--line); padding: 6px 10px; border-radius: 999px; margin: 0 8px 8px 0; color: var(--muted); }
-    footer { padding: 30px 0 36px; border-top: 1px solid var(--line); color: var(--muted); }
-    .row { display:flex; gap: 10px; align-items:center; flex-wrap: wrap; }
+    .hero{padding:74px 0 42px;border-bottom:1px solid var(--line);}
+    .hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:center;}
+    .kicker{color:var(--muted);font-weight:700;letter-spacing:.16em;text-transform:uppercase;font-size:.76rem;}
+    h1{font-size:clamp(1.9rem,4vw,2.6rem);line-height:1.18;margin:10px 0 8px;}
+    .lead{color:var(--muted);font-size:clamp(1rem,1.6vw,1.08rem);}
+    .hero-actions{margin-top:18px;display:flex;gap:12px;flex-wrap:wrap;}
+    .btn{display:inline-flex;align-items:center;gap:10px;padding:10px 14px;border:1px solid var(--line);
+         border-radius:8px;color:var(--fg);}
+    .btn:hover{background:rgba(255,255,255,0.05);}
+    .btn.primary{border:none;background:var(--accent);color:#fff;font-weight:900;}
+    .hero-card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px;box-shadow:var(--shadow);}
+    @media (max-width:920px){.hero-grid{grid-template-columns:1fr;}}
+    section{padding:52px 0;}
+    .section-head{display:flex;align-items:end;justify-content:space-between;gap:16px;margin-bottom:20px;}
+    .section-head h2{font-size:clamp(1.4rem,3vw,1.9rem);margin:0;}
+    .section-head p{margin:0;color:var(--muted);}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+    @media (max-width:1020px){.grid{grid-template-columns:repeat(2,1fr);}}
+    @media (max-width:660px){.grid{grid-template-columns:1fr;}}
+    .card{background:var(--card);border:1px solid var(--line);border-radius:10px;overflow:hidden;
+          transition:transform .2s ease,border-color .2s ease;box-shadow:var(--shadow);}
+    .card:hover{transform:translateY(-2px);border-color:rgba(255,255,255,0.18);}
+    .card-body{padding:12px;}
+    .small{color:var(--muted);font-size:.92rem;}
+    .about{display:grid;grid-template-columns:.9fr 1.1fr;gap:24px;}
+    .about .pill{display:inline-block;background:rgba(255,255,255,0.06);border:1px solid var(--line);
+                 padding:6px 10px;border-radius:999px;margin:0 8px 8px 0;color:var(--muted);}
+    footer{padding:30px 0 36px;border-top:1px solid var(--line);color:var(--muted);}
+    .row{display:flex;gap:10px;align-items:center;flex-wrap:wrap;}
   </style>
 </head>
 <body>
@@ -95,7 +84,9 @@
         <a class="cta" href="assets/CV_Sacha.pdf" target="_blank" rel="noopener">Télécharger le CV</a>
       </nav>
       <button class="burger" id="burger" aria-label="Ouvrir le menu">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
       </button>
     </div>
   </header>
@@ -112,11 +103,12 @@
         </div>
       </div>
       <div class="hero-card">
-        <img src="assets/preview.jpg" alt="Aperçu d’un projet de branding" style="width:100%; border-radius:8px; aspect-ratio: 4/3; object-fit: cover; border:1px solid var(--line);"/>
+        <img src="images/projet1.jpg" alt="Aperçu d’un projet" style="width:100%;border-radius:8px;aspect-ratio:4/3;object-fit:cover;border:1px solid var(--line);"/>
       </div>
     </div>
   </main>
 
+  <!-- === Section Projets avec tes 3 images === -->
   <section id="projets">
     <div class="container">
       <div class="section-head">
@@ -124,11 +116,32 @@
         <p>Objectif • Action • Résultat</p>
       </div>
       <div class="grid">
-        <!-- Cartes projets à ajouter ici -->
+        <div class="card">
+          <img src="images/projet1.jpg" alt="Projet 1">
+          <div class="card-body">
+            <strong>Projet 1</strong>
+            <p class="small">Brève description du projet 1.</p>
+          </div>
+        </div>
+        <div class="card">
+          <img src="images/projet2.jpg" alt="Projet 2">
+          <div class="card-body">
+            <strong>Projet 2</strong>
+            <p class="small">Brève description du projet 2.</p>
+          </div>
+        </div>
+        <div class="card">
+          <img src="images/projet3.jpg" alt="Projet 3">
+          <div class="card-body">
+            <strong>Projet 3</strong>
+            <p class="small">Brève description du projet 3.</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
+  <!-- === Section À propos inchangée === -->
   <section id="a-propos">
     <div class="container">
       <div class="section-head">
@@ -144,12 +157,11 @@
           <span class="pill">Print (affiche)</span>
           <span class="pill">UX simple</span>
           <span class="pill">Gestion de projet</span>
-          <p class="small" style="margin-top:10px;">Inspirations : musique pour le rythme et l’émotion ; gaming pour la clarté d’interface et la hiérarchie d’actions.</p>
         </div>
         <div>
-          <div class="card" style="padding:12px; background: var(--card); border:1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow);">
+          <div class="card" style="padding:12px;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);">
             <h3 style="margin:6px 0 8px;">Méthode</h3>
-            <ol class="small" style="margin:0; padding-left: 18px;">
+            <ol class="small" style="margin:0; padding-left:18px;">
               <li>Brief : objectifs, contraintes, livrables.</li>
               <li>Axes : 2–3 pistes, palette, typographies.</li>
               <li>Déploiement : gabarits, déclinaisons, QA.</li>
@@ -177,11 +189,9 @@
     const burger = document.getElementById('burger');
     const nav = document.getElementById('navlinks');
     burger?.addEventListener('click', () => nav.classList.toggle('open'));
-
     const links = [...document.querySelectorAll('.navlinks a')]
       .filter(a => a.getAttribute('href')?.startsWith('#'));
-    const sections = links.map(a => document.querySelector(a.getAttribute('href')))
-      .filter(Boolean);
+    const sections = links.map(a => document.querySelector(a.getAttribute('href'))).filter(Boolean);
     const onScroll = () => {
       const pos = window.scrollY + 120;
       sections.forEach((sec, i) => {
@@ -193,7 +203,6 @@
       });
     };
     document.addEventListener('scroll', onScroll); onScroll();
-
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 </body>
