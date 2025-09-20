@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Portfolio</title>
   <meta name="description" content="Portfolio – communication, design, marketing." />
+  <!-- L’image Open Graph pointe maintenant vers images/ -->
   <meta property="og:title" content="Portfolio" />
   <meta property="og:description" content="Communication, design, marketing." />
   <meta property="og:type" content="website" />
@@ -13,6 +14,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;600;800&display=swap" rel="stylesheet">
+
   <style>
     /* mêmes styles que ta version précédente */
     :root { --bg:#0f0f10; --fg:#e9e9ea; --muted:#a3a3a7; --card:#16171a;
@@ -81,7 +83,7 @@
       <nav class="navlinks" id="navlinks">
         <a href="#projets">Projets</a>
         <a href="#a-propos">À propos</a>
-        <a class="cta" href="assets/CV_Sacha.pdf" target="_blank" rel="noopener">Télécharger le CV</a>
+        <a class="cta" href="images/CV_Sacha.pdf" target="_blank" rel="noopener">Télécharger le CV</a>
       </nav>
       <button class="burger" id="burger" aria-label="Ouvrir le menu">
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -103,12 +105,12 @@
         </div>
       </div>
       <div class="hero-card">
-        <img src="images/projet1.jpg" alt="Aperçu d’un projet" style="width:100%;border-radius:8px;aspect-ratio:4/3;object-fit:cover;border:1px solid var(--line);"/>
+        <!-- Image d’intro corrigée -->
+        <img src="images/projet1.jpg" alt="Aperçu d’un projet" style="width:100%;border-radius:8px;aspect-ratio:4/3;object-fit:cover;border:1px solid var(--line);" />
       </div>
     </div>
   </main>
 
-  <!-- === Section Projets avec tes 3 images === -->
   <section id="projets">
     <div class="container">
       <div class="section-head">
@@ -118,30 +120,20 @@
       <div class="grid">
         <div class="card">
           <img src="images/projet1.jpg" alt="Projet 1">
-          <div class="card-body">
-            <strong>Projet 1</strong>
-            <p class="small">Brève description du projet 1.</p>
-          </div>
+          <div class="card-body"><strong>Projet 1</strong><p class="small">Brève description du projet 1.</p></div>
         </div>
         <div class="card">
           <img src="images/projet2.jpg" alt="Projet 2">
-          <div class="card-body">
-            <strong>Projet 2</strong>
-            <p class="small">Brève description du projet 2.</p>
-          </div>
+          <div class="card-body"><strong>Projet 2</strong><p class="small">Brève description du projet 2.</p></div>
         </div>
         <div class="card">
           <img src="images/projet3.jpg" alt="Projet 3">
-          <div class="card-body">
-            <strong>Projet 3</strong>
-            <p class="small">Brève description du projet 3.</p>
-          </div>
+          <div class="card-body"><strong>Projet 3</strong><p class="small">Brève description du projet 3.</p></div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- === Section À propos inchangée === -->
   <section id="a-propos">
     <div class="container">
       <div class="section-head">
